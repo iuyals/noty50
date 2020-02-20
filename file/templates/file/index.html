@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}
+    file
+{% endblock title %}
+
+{% block body %}
+<div>upload your file to server so you can get it on your other device</div>
+<form action="" method="post"  enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="upfile" id="">
+    <input type="submit" value="upload">
+</form>  
+
+{% load static %}
+{% for dname in dnames %}
+  <a href="{% static '' %}files/{{ dname }}">{{ dname }}</a>
+{% endfor %}
+{% for fname in fnames %}
+    <a href="{% static '' %}files/{{ fname }}">{{ fname }}</a>
+{% endfor %}
+{% endblock body %}

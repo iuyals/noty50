@@ -1,0 +1,32 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.notediv {
+    width: 500px;
+}
+
+textarea {
+    min-width: 500px;
+}
+
+.dict {
+    position:fixed;
+    bottom: 0;
+}
+
+.dict>p{
+    margin: 0;
+}
+
+/* iframe {
+    height: 400px;
+    -ms-zoom: 0.5;
+    -moz-transform: scale(0.75);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.75);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.5);
+    -webkit-transform-origin: 0 0;
+} */
