@@ -25,7 +25,7 @@ SECRET_KEY = '1b2li6$mcowr%12kutm+0w4xm89(p48li@agepv6+le-im@&w&'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['d.noty50.top']
 
 
 # Application definition
