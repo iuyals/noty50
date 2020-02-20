@@ -26,9 +26,9 @@ note
     {% for note in notes %}
     <div class="notediv">
         <div>
-            {{ note.title }}
+            {{ note.title }} 
         </div>
-        <textarea name="notecontent" id="n{{ note.id }}" cols="30" rows="10" >{{ note.content }}</textarea>
+        <textarea readonly this.select() name="notecontent" id="n{{ note.id }}" cols="30" rows="10" >{{ note.content }}</textarea>
     </div>
     {% endfor %}
 </div>
@@ -37,10 +37,10 @@ note
     <textarea  data-bind="value: content,attr:{ cols:width,rows:height}"></textarea>
 </div> -->
 <div class='dict' data-bind="style: {display: dict().display}">
-    <p>
-        <button data-bind="event: {click: closedict}" >close</button>
-    </p>
-    <iframe data-bind="attr: { src: dict().src },style:{width:dict().width,height:dict().height}" ></iframe>
+    <iframe data-bind="attr: { src: dict().src }" ></iframe>
+</div>
+<div class='tool'>
+    <button data-bind="event:{click: lookup}">dict</button>
 </div>
 
 <script src="{% static "js/ko.js" %}"></script>

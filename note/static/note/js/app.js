@@ -55,10 +55,13 @@ class Dict{
     constructor(src){
         this.src=ko.observable(src);
         this.display=ko.observable('none')
-        this.width=ko.observable(window.innerWidth*2)
-        this.height=ko.observable(300)
     }
     lookup(){
+        //if dict is displayed on page close it 
+        if(this.display()=='initial'){
+            this.display('none');
+            return;
+        }
         let word=window.getSelection().toString();
         this.display("initial")
         this.src(ydict+word+ydcollinsid) //i.src="https://cn.bing.com/dict/search?q=root"        

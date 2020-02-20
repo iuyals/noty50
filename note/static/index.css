@@ -13,20 +13,32 @@ textarea {
 
 .dict {
     position:fixed;
-    bottom: 0;
+    top: 0;
+    left: 0;
+}
+
+.dict>iframe {
+    min-width: 500px;
+    min-height: 400px;
 }
 
 .dict>p{
     margin: 0;
 }
+.tool {
+    position: fixed;
+    right: 3%;
+    bottom: 10%;
+}
 
-/* iframe {
+iframe {
     height: 400px;
-    -ms-zoom: 0.5;
+    -ms-zoom: 0.75;
     -moz-transform: scale(0.75);
     -moz-transform-origin: 0 0;
     -o-transform: scale(0.75);
     -o-transform-origin: 0 0;
-    -webkit-transform: scale(0.5);
+    -webkit-transform: scale(0.75);
     -webkit-transform-origin: 0 0;
-} */
+    font-size: large;
+} 
