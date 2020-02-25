@@ -1,0 +1,3 @@
+*.db
+noty50/__pycache__
+*.sqlite3

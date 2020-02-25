@@ -7,26 +7,26 @@ note
 {% block body %}
 
 {% load static %}
-<div>
-    current user:{{ username }}
+<div id='userstatus'>
+    user:{{ username }}
 </div>
 <form action="" method="get">
-    <input type="text" name="keyword" value="" placeholder="try search">
-    <input type="submit" value='search'>
+    <input class="formtext" type="text" name="keyword" value="" placeholder="try search">
+    <input class="formsubmit" type="submit" value='search'>
 </form>
 <form action="" method="post">
     {% csrf_token %}
     <textarea name="noteinput" id="noteinbox" placeholder="type here and take note now" cols="30" rows="10"></textarea>
     <div></div>
-    <input type="text" name='titleinput' id='titleinbox' placeholder="title">
-    <input type="submit" value="save">
+    <input class="formtext" type="text" name='titleinput' id='titleinbox' placeholder="title">
+    <input class="formsubmit" type="submit" value="save">
 </form>
 
 <div id='notesdiv' class="flex-container">
     {% for note in notes %}
     <div class="notediv">
-        <div>
-            {{ note.title }} 
+        <div class="notetitle">
+            # {{ note.title }} 
         </div>
         <textarea readonly this.select() name="notecontent" id="n{{ note.id }}" cols="30" rows="10" >{{ note.content }}</textarea>
     </div>
@@ -40,7 +40,8 @@ note
     <iframe data-bind="attr: { src: dict().src }" ></iframe>
 </div>
 <div class='tool'>
-    <button data-bind="event:{click: lookup}">dict</button>
+    
+    <button id="dictbtn" data-bind="event:{click: lookup}"><img src="/static/assets/search48.png"></button>
 </div>
 
 <script src="{% static "js/ko.js" %}"></script>

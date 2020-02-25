@@ -1,14 +1,40 @@
+body{
+    margin-left: 10%;
+    margin-right: 20%;
+}
+#main{
+    position: relative;
+    min-width: 380px;
+}
+
+#userstatus{
+    color: lightskyblue;
+    margin-bottom: 10px;
+}
+
 .flex-container {
     display: flex;
     flex-wrap: wrap;
 }
 
+.notetitle{
+    font-size: smaller;
+    color: lightseagreen;
+}
 .notediv {
-    width: 500px;
+    margin-right: 1%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    
+}
+.notediv>div{
+    min-width: 350px;
 }
 
 textarea {
-    min-width: 500px;
+    min-width: 98%;
+    border-color: lightblue;
+    border-width: 2px;
 }
 
 .dict {
@@ -22,6 +48,33 @@ textarea {
     min-height: 400px;
 }
 
+form{
+    position: relative;
+    padding: 0;
+    margin-right: 0;
+    width: 350px;
+}
+
+.formtext{
+    width: 80%;
+    margin-right: 0;
+    border: lightblue solid 2px;
+    margin-bottom: 10px;
+    height: 20px;
+}
+
+.formsubmit{
+    position: absolute;
+    right: 0;
+    width:60px;
+    bottom: 10px;
+    background-color: lightcyan;
+    border-width: 1px;
+    
+    height: 25px;
+}
+
+
 .dict>p{
     margin: 0;
 }
@@ -31,7 +84,7 @@ textarea {
     bottom: 10%;
 }
 
-iframe {
+/* iframe {
     height: 400px;
     -ms-zoom: 0.75;
     -moz-transform: scale(0.75);
@@ -41,4 +94,33 @@ iframe {
     -webkit-transform: scale(0.75);
     -webkit-transform-origin: 0 0;
     font-size: large;
-} 
+}  */
+
+#menubar{
+    margin-bottom: 30px;
+    margin-top: 30px;
+}
+#menubar>a{
+    margin-right: 15px;
+    text-decoration: none;
+    color: grey;
+}
+#logbar{
+    
+    position: absolute;
+    right: 10%;
+    margin-left: 0;
+    text-align: right;
+}
+#logbar>a{
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: smaller;
+    color: lightslategray;
+}
+
+.tool > button{
+    background-color: lightcyan;
+    border-width: 0;
+}
+

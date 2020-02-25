@@ -13,8 +13,9 @@ def index(request):
     context={
         'username': user.username,
         'userid': user.id,
-        'notes': user.notes.all()
+        'notes':reversed(user.notes.all() )
     }
+    
     #if post,save that note then display all note as normal
     if request.method=="POST":
         title=request.POST['titleinput']
