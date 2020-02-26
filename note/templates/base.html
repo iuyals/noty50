@@ -11,17 +11,18 @@
     {% endblock title %}</title>
 </head>
 <body >
+    <div id="menubar" class="flex-container">
+        <a href="{% url 'note' %}">note</a>
+        <a href="{% url 'file' %}">file</a>
+        <a href="{% url 'help' %}">help</a>
+        <span id='logbar'>
+            <a href="{% url 'userhome' %}">login</a>
+            <!-- <a href="{% url 'logout' %}">logout</a> -->
+        </span>
+        
+    </div>
     <div id='main'>
-        <div id="menubar" class="flex-container">
-            <a href="{% url 'note' %}">note</a>
-            <a href="{% url 'file' %}">file</a>
-            <a href="{% url 'help' %}">help</a>
-            <span id='logbar'>
-                <a href="{% url 'userhome' %}">login</a>
-                <!-- <a href="{% url 'logout' %}">logout</a> -->
-            </span>
-            
-        </div>
+        
         {% block body %}
           
         {% endblock body %}

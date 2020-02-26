@@ -4,6 +4,9 @@ from django.shortcuts import render
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from note.models import Note
+from django.http import JsonResponse
+from . import helper
+
 # Create your views here.
 def index(request):
     user=request.user
@@ -13,7 +16,7 @@ def index(request):
     context={
         'username': user.username,
         'userid': user.id,
-        'notes':reversed(user.notes.all() )
+        'notes':user.notes.all() 
     }
     
     #if post,save that note then display all note as normal
@@ -34,5 +37,12 @@ def index(request):
     if 'keyword' in request.GET:
         #filter keyword in two 
         context['notes']=context['notes'].filter(content__contains=request.GET['keyword']) | context['notes'].filter(title__contains=request.GET['keyword'])
-
+    
+    context['notes']=reversed(context['notes'])
     return render(request,"note/index.html",context=context)
+
+
+def dict(request):
+    if 'keyword' in request.GET:
+        return JsonResponse({'collins':helper.lookup(request.GET['keyword'])})
+    return JsonResponse({'state':'empty lookup'})

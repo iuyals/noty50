@@ -1,5 +1,6 @@
 from html.parser import HTMLParser
 import requests as httprequests
+import lxml.html
 
 def isdigitalpluspoint(str):
     for i in range(len(str)-1):
@@ -53,5 +54,35 @@ def getDefyd(word):
     parser = YOUDAOHTMLParser()
     parser.feed(page.text)
     return {'cn':parser.chtrans,'collis':parser.collinsdef}
+
+def getCollinsTrees(keyword):
+  url="http://dict.youdao.com/w/eng/"+keyword
+  page= lxml.html.parse(url)
+  trees=page.xpath("//*[@id='collinsResult']/div/div/div/div/ul/li")
+  return trees
+
+def getDefineList(trees):
+  strlist=[]
+  for t in trees:
+    s=t.text_content()
+    s=s.strip()
+    s=s.replace("\t","")
+    s=s.replace("  ","")
+    s=s.replace("\n\n","\n")
+    s=s[0:12].replace("\n"," ")+s[12:]
+    if len(s)>0:
+      strlist.append(s)
+  return strlist
+
+def printStrlist(strlist):
+  for s in strlist:
+    print(s)
+
+def lookup(keyword):
+  trees=getCollinsTrees(keyword)
+  strlist=getDefineList(trees)
+
+  return strlist
+
 
 
