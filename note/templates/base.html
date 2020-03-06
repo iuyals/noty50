@@ -12,13 +12,21 @@
 </head>
 <body >
     <div id="menubar" class="flex-container">
+        <button><img src="{% static "" %}/assets/menu40.png" alt="menu">
+            <br>
+            <br>
+            <span id='logbar'>
+                <span>user:{{ username }}</span> 
+                <a href="{% url 'userhome' %}">login</a>
+                <a href="{% url 'logout' %}">logout</a>
+                
+            </span>
+        </button>
+        
         <a href="{% url 'note' %}">note</a>
         <a href="{% url 'file' %}">file</a>
         <a href="{% url 'help' %}">help</a>
-        <span id='logbar'>
-            <a href="{% url 'userhome' %}">login</a>
-            <!-- <a href="{% url 'logout' %}">logout</a> -->
-        </span>
+        
         
     </div>
     <div id='main'>

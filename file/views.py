@@ -17,8 +17,8 @@ def index(request):
                 destination.write(chunk)
         return render(request,'notice.html',context={"msg":'your file saved'})
     
-    all_subs_names=helper.get_all_subs_name(path)
-    context={"dnames":all_subs_names['dirs'],
-        "fnames":all_subs_names['files']}
+    all_subs_names=helper.get_all_subs_info(path)
+    context={"dirs":all_subs_names['dirs'],
+        "files":all_subs_names['files']}
     return render(request,'file/index.html',context=context);
 
