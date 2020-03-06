@@ -1,5 +1,6 @@
 import os
 import os.path
+import requests
 
 def fsize_str(size):
     if size<1024:
@@ -28,3 +29,10 @@ def get_project_abspath():
 
 def get_files_abspath():
     return get_project_abspath()+'note/static/files/'
+
+def dlfile(url,fname='temp',pathstr=get_files_abspath()):
+  resfile=requests.get(url,stream=True)
+  
+  with open(pathstr+fname,'wb') as handle:
+    for data in resfile.iter_content():
+      handle.write(data)

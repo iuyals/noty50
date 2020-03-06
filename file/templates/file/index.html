@@ -5,11 +5,15 @@ file
 {% endblock title %}
 
 {% block body %}
-<div>upload your file to server so you can get it on your other device</div>
+<p>upload your file to server so you can get it on your other device</p>
 <form action="" method="post" enctype="multipart/form-data">
     {% csrf_token %}
     <input type="file" name="upfile" id="">
-    <input type="submit" value="upload">
+    <p>or use url,we download for you</p>
+    <input type="text" name="url" id="" placeholder="url"> 
+    <p>and give it a short name</p>
+    <input type="text" name="fname" placeholder="you file name" id="">
+    <input type="submit" value="save">
 </form>
 
 {% load static %}
