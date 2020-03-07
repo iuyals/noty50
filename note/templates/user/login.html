@@ -1,14 +1,17 @@
+{% extends "base.html" %}
+
+
 {% block body %}
 <h1>Login</h1>
 {% if message %}
     <div>
-        {{ message }}
+        {{ message }} <br><br><br>
     </div>
 {% endif %}
 <form action="{% url 'login' %}" method="post">
     {% csrf_token %}
-    <input name="username" type="text"/>
-    <input name="password" type="password"/>
-    <input type="submit" value="Login"/>
+    <input name="username" type="text" class="formtext" placeholder="your name" /> <p></p>
+    <input name="password" type="password" class="formtext" placeholder="your password" /> <p></p>
+    <input type="submit" value="Login" class="formsubmit" />
 </form>
 {% endblock %}

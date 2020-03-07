@@ -16,9 +16,14 @@
             <br>
             <br>
             <span id='logbar'>
-                <span>user:{{ username }}</span> 
-                <a href="{% url 'userhome' %}">login</a>
-                <a href="{% url 'logout' %}">logout</a>
+                <ul>
+                    <li> <a href="{% url 'userhome' %}">login</a> </li> <p></p>
+                    <li>  <a href="{% url 'logout' %}">logout</a></li> <p></p>
+                    <li> <a href="{% url 'register' %}">register</a> </li> <p></p>
+                    <li> <span>user:{{ username }}</span>  </li>
+                
+                
+                </ul>
                 
             </span>
         </button>

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>register</h1>
+{% if message %}
+    <div>
+        {{ message }}
+    </div>
+{% endif %}
+<form action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    <p>your name</p>
+    <input name="username" type="text" class="formtext"  />
+    <p>password</p>
+    <input name="password" type="password" class="formtext"  />
+    <p>password again</p>
+    <input type="password" name="passwordagain" id="" class="formtext"  />
+    <p></p>
+    <input type="submit" value="register now!" class="formsubmit" />
+</form>
+{% endblock %}

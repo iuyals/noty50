@@ -9,7 +9,7 @@ body{
     
     #menubar>*{
         margin-left: 20px;
-        margin-top: 25px;
+        margin-top: 35px;
         margin-right: 6%;
         text-decoration: none;
         color: grey;
@@ -17,9 +17,8 @@ body{
   }
 
 #main{
-    position: relative;
     min-width: 360px;
-    padding-left: 10px;
+    padding-left: 27px;
 }
 
 #userstatus{
@@ -66,7 +65,6 @@ textarea {
 }
 
 form{
-    position: ;
     padding: 0;
     margin-right: 0;
     width: 350px;
@@ -81,7 +79,6 @@ form{
 }
 
 .formsubmit{
-    position: ;
     right: 0;
     width:60px;
     bottom: 10px;
@@ -129,7 +126,8 @@ form{
 
 #menubar>button{
     margin-left: 5px;
-    margin-top: 40px;
+    margin-top: 37px;
+    margin-right: 20px;
     text-decoration: none;
     color: grey;
     background-color: lightcyan;
@@ -145,7 +143,8 @@ form{
 }
 #logbar{
     display: none;
-    position: absolute;
+    background-color: lightgray;
+    position:absolute;
     left: 0;
     font-size: small;
 }

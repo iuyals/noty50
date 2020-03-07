@@ -31,6 +31,7 @@ def index(request):
         new_note.title=request.POST['titleinput']
         new_note.content=request.POST['noteinput']
         new_note.save();
+        context['notes']=reversed(context['notes'])
         return render(request,"note/index.html",context=context)        
     
 
