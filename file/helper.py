@@ -31,8 +31,4 @@ def get_files_abspath():
     return get_project_abspath()+'note/static/files/'
 
 def dlfile(url,fname='temp',pathstr=get_files_abspath()):
-  resfile=requests.get(url,stream=True)
-  
-  with open(pathstr+fname,'wb') as handle:
-    for data in resfile.iter_content():
-      handle.write(data)
+  os.system(f'aria2c {url} --dir {pathstr} -o {fname} -x 8')
